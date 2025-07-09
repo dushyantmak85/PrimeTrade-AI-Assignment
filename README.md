@@ -33,7 +33,6 @@ This project connects to the **Binance Futures Testnet**, making it safe for tes
 | Hosting     | Runs locally on port `5000` |
 
 ---
----
 
 ## 🧠 Project Structure
 
