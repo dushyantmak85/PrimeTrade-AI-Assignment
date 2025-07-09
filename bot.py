@@ -1,3 +1,9 @@
+# This is main trading bot script that connects to Binance Futures and allows users to place orders.
+# It uses the Binance Futures API to interact with the market and perform trading operations.
+
+# For this bot to work, you need to have a Binance account and testnet API_KEY and API_SECRET set up in a .env file .
+# The bot supports placing MARKET, LIMIT, and STOP_MARKET orders.
+
 import logging
 import sys
 import os
@@ -50,7 +56,7 @@ class BasicBot:
             # The Binance API will interpret this as a market order. 
                 
             order = self.client.new_order(**params)
-            logging.info("Order placed: %s", order)
+            logging.info("Order placed Successfully: %s", order)
             return order
         
         except ClientError as e:                    # Catching Binance API exceptions          
@@ -81,13 +87,24 @@ def get_user_input():
 
 # Function to place an order from frontend input
 def Input_from_frontend(symbol, side, order_type, quantity, price=None, stop_price=None):
-    
-    """ Function to place an order from the frontend input"""
-    
+    """Function to place an order from the frontend input and return a JSON-serializable result."""
     bot = BasicBot(API_KEY, API_SECRET)
-    # Placing the order using the bot
     order = bot.place_order(symbol, side, order_type, quantity, price, stop_price)
-    print("Order Result:\n", order)
+    
+    # If order is a dict and contains 'orderId', treat as success
+    if isinstance(order, dict) and "orderId" in order:
+        return {
+            "success": True,
+            "message": f"Order placed successfully! Order ID: {order['orderId']}",
+            "order": order
+        }
+        
+    # If order is a string (error), treat as error
+    return {
+        "success": False,
+        "message": order if isinstance(order, str) else "Order failed.",
+        "order": order
+    }
             
      
 

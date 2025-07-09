@@ -1,8 +1,14 @@
+# This is a Flask web application that allows users to place orders on Binance Futures through a web interface. 
+
+# This application runs on port 5000 and provides a form for users to input order details.
+# To run the application, ensure you have Flask installed and start the server with `python frontend.py`.
+
 from flask import Flask, render_template_string, request
-from bot import Input_from_frontend
+from bot import Input_from_frontend  # Importing the function from bot.py to handle order placement
 
 app = Flask(__name__)
 
+# HTML template for the form
 HTML_FORM = """
 <!doctype html>
 <html lang="en">
@@ -83,6 +89,26 @@ HTML_FORM = """
       background: linear-gradient(90deg, #ffb300 60%, #ffd700 100%);
       color: #232526;
     }
+    .alert {
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.2rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.05rem;
+      box-shadow: 0 2px 8px rgba(255, 215, 0, 0.07);
+      animation: fadeIn 0.6s;
+    }
+    .alert-success {
+      background: #1e5631;
+      color: #d4ffb2;
+      border: 1px solid #a6e22e;
+    }
+    .alert-error {
+      background: #5c1e1e;
+      color: #ffd6d6;
+      border: 1px solid #ff4d4d;
+    }
     pre {
       background: #232526;
       color: #ffd700;
@@ -102,6 +128,9 @@ HTML_FORM = """
 <body>
   <div class="container">
     <h2>Binance Futures Order</h2>
+    {% if message %}
+      <div class="alert {{ 'alert-success' if success else 'alert-error' }}">{{ message }}</div>
+    {% endif %}
     <form method="post" autocomplete="off">
       <label for="symbol">Symbol</label>
       <input name="symbol" id="symbol" value="BTCUSDT" required>
@@ -154,6 +183,10 @@ HTML_FORM = """
 @app.route('/', methods=['GET', 'POST'])
 def index():
     result = None
+    message = None
+    success = False
+
+   
     if request.method == 'POST':
         symbol = request.form['symbol'].upper()
         side = request.form['side'].upper()
@@ -165,8 +198,20 @@ def index():
             price = None
         if stop_price == '':
             stop_price = None
-        result = Input_from_frontend(symbol, side, order_type, quantity, price, stop_price)
-    return render_template_string(HTML_FORM, result=result)
+
+        response = Input_from_frontend(symbol, side, order_type, quantity, price, stop_price)
+        result = response
+
+        # Use the returned dictionary's success and message fields
+        if isinstance(response, dict):
+            success = response.get("success", False)
+            message = response.get("message", "Order failed. See details below.")
+        else:
+            # fallback for string or unexpected result
+            message = str(response)
+            success = False
+
+    return render_template_string(HTML_FORM, result=result, message=message, success=success)
 
 if __name__ == '__main__':
     app.run(debug=True)
