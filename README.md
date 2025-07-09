@@ -134,6 +134,14 @@ All actions are logged in `trade_bot.log`, including:
 
 ---
 
+## 📸 Screenshots
+
+###  ✅ Order Placed Successfully
+
+![Order Placed Successfully](./assets/demo3.png)
+
+---
+
 ## 🔐 Security Notes
 
 * Do **not commit `.env`** file
