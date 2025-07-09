@@ -39,7 +39,10 @@ This project connects to the **Binance Futures Testnet**, making it safe for tes
 
 > A quick demo of the trading interface in action:
 
-![Trading Bot Demo](Demo/demo.gif)
+
+### 🖥️ Web Interface (Home)
+![Web UI Home](Demo/Screenshot 2025-07-09 185231.png)
+
 ---
 
 ## 🧠 Project Structure
