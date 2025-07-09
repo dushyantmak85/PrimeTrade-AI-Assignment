@@ -33,16 +33,6 @@ This project connects to the **Binance Futures Testnet**, making it safe for tes
 | Hosting     | Runs locally on port `5000` |
 
 ---
-
-
-## 📸 Demo
-
-> A quick demo of the trading interface in action:
-
-
-### 🖥️ Web Interface (Home)
-![Web UI Home](Demo/Screenshot 2025-07-09 185231.png)
-
 ---
 
 ## 🧠 Project Structure
