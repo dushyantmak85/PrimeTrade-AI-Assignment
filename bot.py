@@ -48,9 +48,9 @@ class BasicBot:
                 params["price"] = price
                 params["timeInForce"] = "GTC"
                 
-            elif order_type == "STOP_MARKET": # Added a STOP_MARKET order type as the third order type             
+            elif order_type == "STOP_MARKET":    # Added a STOP_MARKET order type as the third order type             
                 params["stopPrice"] = stop_price
-                params["timeInForce"] = "GTE_GTC"
+                params["closePosition"] = True   # This is used to close the position at the stop price
             
             # If order_type is "MARKET", the bot does not add price or stopPrice to params.
             # The Binance API will interpret this as a market order. 
@@ -87,7 +87,9 @@ def get_user_input():
 
 # Function to place an order from frontend input
 def Input_from_frontend(symbol, side, order_type, quantity, price=None, stop_price=None):
+    
     """Function to place an order from the frontend input and return a JSON-serializable result."""
+    
     bot = BasicBot(API_KEY, API_SECRET)
     order = bot.place_order(symbol, side, order_type, quantity, price, stop_price)
     
