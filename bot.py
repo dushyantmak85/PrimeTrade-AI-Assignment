@@ -20,7 +20,7 @@ API_SECRET = os.getenv("API_SECRET")
 class BasicBot:
     def __init__(self, api_key, api_secret, testnet=True):
         base_url = "https://testnet.binancefuture.com" if testnet else "https://fapi.binance.com"  # Binance USDT-M Futures API base URL      
-        self.client = UMFutures(key=api_key, secret=api_secret, base_url=base_url) # Initializing the Binance Futures client      
+        self.client = UMFutures(key=api_key, secret=api_secret, base_url=base_url)                 # Initializing the Binance Futures client      
          
         try:
             account = self.client.account()
