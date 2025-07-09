@@ -84,8 +84,8 @@ PrimeTrade AI Assignment/
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/prime-trade-bot.git
-cd prime-trade-bot
+git clone https://github.com/dushyantmak85/PrimeTrade-AI-Assignment.git
+cd PrimeTrade-AI-Assignment
 ```
 
 ### 2. Install Requirements
