@@ -2,9 +2,9 @@
 ---
 
 ````markdown
-# 📈 PrimeTrade AI - Binance Futures Trading Bot (with Web UI)
+# 📈 Binance Futures Trading Bot 
 
-A full-stack crypto trading bot that allows users to **place Binance USDT-M Futures orders** (Market, Limit, and Stop-Market) via a **user-friendly web interface** built using **Flask**.
+A  crypto trading bot that allows users to **place Binance USDT-M Futures orders** (Market, Limit, and Stop-Market) via a **user-friendly web interface** built using **Flask**.
 
 This project connects to the **Binance Futures Testnet**, making it safe for testing and experimentation.
 
