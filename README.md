@@ -34,13 +34,12 @@ This project connects to the **Binance Futures Testnet**, making it safe for tes
 
 ---
 
+
 ## 📸 Demo
 
-> Insert screenshots or a demo GIF here showing:
-> - The UI with order form
-> - Sample order placed
-> - Response status shown in browser
+> A quick demo of the trading interface in action:
 
+![Trading Bot Demo](Demo/demo.gif)
 ---
 
 ## 🧠 Project Structure
