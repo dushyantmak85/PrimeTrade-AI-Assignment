@@ -33,7 +33,7 @@ class BasicBot:
             logging.info("Connected to Binance Futures Testnet.")
         except Exception as e:
             logging.error("Connection failed: %s", str(e))
-            sys.exit("Failed to connect to Binance Testnet. Check API keys.")
+            sys.exit("Failed to connect to Binance Testnet. Check API keys.") # Exit if connection fails
 
     def place_order(self, symbol, side, order_type, quantity, price=None, stop_price=None):
         try:                      
