@@ -6,3 +6,9 @@
 2025-07-09 16:31:58,654:INFO:Connected to Binance Futures Testnet.
 2025-07-09 16:32:27,319:INFO:Order placed: {'orderId': 5230016146, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'KxNDv7QbTvEch2Yqa5tIOa', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '1.000', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1752058947228}
 2025-07-09 16:33:19,154:INFO:Order placed: {'orderId': 5230019571, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'AWWUK0hRMVCjx5hXcZNpZG', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '1.000', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1752058999057}
+
+2025-07-09 16:51:17,768:INFO:Connected to Binance Futures Testnet.
+2025-07-09 16:51:17,970:INFO:Order placed: {'orderId': 5230101524, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'kMkKZ31sJedd9d8AUADrY0', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.001', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1752060077880}
+
+
+

@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from binance.um_futures import UMFutures  # Importing Binance Futures client for USDT-M Futures
 from binance.error import ClientError     # Importing Binance API error for error handling
 
-# Setup logging
+# Setting up logging
 logging.basicConfig(
     filename='trading_bot.log',
     level=logging.INFO,
@@ -79,20 +79,15 @@ def get_user_input():
     return symbol, side, order_type, quantity, price, stop_price
 
 
-def main():
+# Function to place an order from frontend input
+def Input_from_frontend(symbol, side, order_type, quantity, price=None, stop_price=None):
+    
+    """ Function to place an order from the frontend input"""
+    
     bot = BasicBot(API_KEY, API_SECRET)
-    while True:
-        try:
-            # Get user input for placing an order
-            symbol, side, order_type, quantity, price, stop_price = get_user_input()            
+    # Placing the order using the bot
+    order = bot.place_order(symbol, side, order_type, quantity, price, stop_price)
+    print("Order Result:\n", order)
             
-            # Placing the order using the bot
-            order = bot.place_order(symbol, side, order_type, quantity, price, stop_price)
-            print("Order Result:\n", order)
-            
-        except KeyboardInterrupt:
-            print("\nExiting bot.")
-            break
+     
 
-if __name__ == "__main__":
-    main()
